@@ -1,5 +1,5 @@
 # pixels-n-pitches
-Ever heard a son and wish there was art created that matched its vibe. Well fret not (pun intended) now you can.
+Ever heard a song and wish there was art that matched the vibe of that song? Well fret not (pun intended), now you can.
 
 ## Creators
 Lyndsey Becker, Victoria Cabral, Nix Harris-Palmer
