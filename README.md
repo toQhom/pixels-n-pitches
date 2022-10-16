@@ -2,7 +2,7 @@
 Ever heard a song and wish there was art that matched the vibe of that song? Well fret not (pun intended), now you can.
 
 ## Creators
-Lyndsey Becker, Victoria Cabral, Nix Harris-Palmer
+Lyndsey Becker, Victoria Cabral, Nyx Harris-Palmer
 
 ## What was this Created For?
 This was created for Technica 2022
