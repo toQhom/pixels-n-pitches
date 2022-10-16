@@ -1,10 +1,18 @@
 import mido
 import numpy as np
 
-def midi_to_np_arr(path_to_mid):
-    mid = mido.MidiFile('Never-Gonna-Give-You-Up-3.mid', clip=True)
-    merged = mido.merge_tracks(mid.tracks)
-    messages = list(m.note for m in filter(lambda msg: msg.type=='note_on', merged))
-    notes = np.empty(len(messages), dtype=object)
-    notes[:] = messages
+def midi_to_np_arr(path_to_mid, length):
+    mid = mido.MidiFile(path_to_mid, clip=True)
+    messages = []
+    for track in mid.tracks:
+        for msg in track:
+            if msg.type == 'note_on':
+                messages.append(msg.note)
+                if len(messages) == length:
+                    break
+        if len(messages) == length:
+            break
+    while len(messages) < length:
+        messages.append(-1)
+    notes = np.fromiter(messages, dtype=int)
     return notes
