@@ -128,6 +128,7 @@ def main():
         img_pred = np.reshape(255*predictions, (32, 32, 3))
         img_final = Image.fromarray(img_pred, mode='RGB')
         img_final.show()
+        img_final.save('Output Images/'+midi_file.rpartition('/')[-1].replace('.mid', '.jpg'))
 
 
 if __name__ == '__main__':
