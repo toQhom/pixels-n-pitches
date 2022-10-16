@@ -1,7 +1,8 @@
 import mido
 import numpy as np
+import random
 
-def midi_to_np_arr(path_to_mid, length):
+def midi_to_np_arr(path_to_mid, length, shuffle=False):
     mid = mido.MidiFile(path_to_mid, clip=True)
     messages = []
     for track in mid.tracks:
@@ -14,5 +15,7 @@ def midi_to_np_arr(path_to_mid, length):
             break
     while len(messages) < length:
         messages.append(-1)
-    notes = np.fromiter(messages, dtype=int)
+    if shuffle:
+        random.shuffle(messages)
+    notes = np.fromiter(messages, dtype=float)
     return notes
